@@ -25,3 +25,14 @@ class AboutViewTests(SimpleTestCase):
 
         self.assertContains(response, "About Page")
         self.assertContains(response, "about page of my Django application")
+
+class ApiHomeViewTests(SimpleTestCase):
+    def test_api_home_page_returns_success(self):
+        response = self.client.get(reverse("api_home"))
+
+        self.assertEqual(response.status_code, 200)
+
+    def test_api_home_page_contains_message(self):
+        response = self.client.get(reverse("api_home"))
+
+        self.assertContains(response, "Hello, World! This is the API home endpoint.")
