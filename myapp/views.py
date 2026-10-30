@@ -14,4 +14,6 @@ def about(request):
 
 @api_view(['GET'])
 def api_home(request):
-    return Response({"message": "Hello, World! This is the API home endpoint."})
+    return Response({"message": "Hello, World! This is the API home endpoint.",
+                     "status": "success"})
+
