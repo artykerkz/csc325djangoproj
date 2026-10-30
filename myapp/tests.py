@@ -36,3 +36,6 @@ class ApiHomeViewTests(SimpleTestCase):
         response = self.client.get(reverse("api_home"))
 
         self.assertContains(response, "Hello, World! This is the API home endpoint.")
+        self.assertEqual(response.json()["status"], "success")
+
+    
